@@ -59,7 +59,7 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
+    mean = 0
     for num in number_list:
         mean += num
     mean /= len(number_list) 
@@ -88,6 +88,6 @@ def get_median(number_list):
     """
     median = None
     number_list.sort()
-    median = number_list[len(number_list)/2] + number_list[len(number_list)/2 - 1]
+    median = number_list[len(number_list)//2] + number_list[len(number_list)//2 - 1]
     median /= 2
     return median
