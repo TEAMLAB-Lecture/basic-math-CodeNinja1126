@@ -90,7 +90,7 @@ def get_median(number_list):
     list_len = len(number_list)
     number_list.sort()
     
-    if list_len%2:
+    if list_len%2 == 0:
         median = number_list[list_len//2 - 1] + number_list[list_len//2]
         median /= 2
     else:
