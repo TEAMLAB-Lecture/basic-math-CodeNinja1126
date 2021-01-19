@@ -8,23 +8,12 @@
 
 
 def get_greatest(number_list):
-    """
-    주어진 리스트에서 가장 큰 숫자를 반환함
+ 
+    greatest_number = number_list[0]
+    for num in number_list[1:]:
+        if greatest_number < num:
+            greatest_number = num
 
-        Parameters:
-            number_list (list): integer로 값으로만 구성된 list
-            ex - [10, 33, 22, 99, 33]
-
-        Returns:
-            greatest_number (int): parameter number_list 중 가장 큰 값
-
-        Examples:
-            >>> number_list = [39, 54, 32, 11, 99]
-            >>> import basic_math as bm
-            >>> bm.get_greatest(number_list)
-            99
-    """
-    greatest_number = None
     return greatest_number
 
 
@@ -34,7 +23,7 @@ def get_smallest(number_list):
 
         Parameters:
             number_list (list): integer로 값으로만 구성된 list
-            ex - [10, 33, 22, 99, 33]
+         ex - [10, 33, 22, 99, 33]
 
         Returns:
             smallest_number (int): parameter number_list 중 가장 작은 값
@@ -45,7 +34,11 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
+    smallest_number = number_list[0]
+    for num in number_list[1:]:
+        if smallest_number > num:
+            smallest_number = num
+
     return smallest_number
 
 
@@ -67,6 +60,9 @@ def get_mean(number_list):
             47
     """
     mean = None
+    for num in number_list:
+        mean += num
+    mean /= len(number_list) 
     return mean
 
 
@@ -91,4 +87,7 @@ def get_median(number_list):
             35.5
     """
     median = None
+    number_list.sort()
+    median = number_list[len(number_list)/2] + number_list[len(number_list)/2 - 1]
+    median /= 2
     return median
